@@ -8,13 +8,12 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Camera extends BaseTimeEntity {
+public class Rating {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CAMERA_SEQ")
-    private Long seq;
-
+    @Column(name = "RATING_ID")
     private String name;
+
+    private int point;
 
 }

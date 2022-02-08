@@ -15,7 +15,6 @@ public class Company extends BaseTimeEntity {
     @Column(name = "COMPANY_SEQ")
     private Long seq;
 
-    @Column(length = 100)
     private String name;
 
 }

@@ -19,10 +19,14 @@ public class Board extends BaseTimeEntity {
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    @Column(length = 200)
     private String title;
 
-    @Column(length = 1000)
     private String content;
+
+    private int views;
+
+    private int likes;
+
+    private String showFlag;
 
 }

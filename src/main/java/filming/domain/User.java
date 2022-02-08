@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -14,18 +15,25 @@ public class User extends BaseTimeEntity {
     @Column(name = "USER_ID")
     private String id;
 
-    @Column(length = 30, nullable = false)
+    @OneToMany(mappedBy = "user")
+    private List<UserCamera> userCameras;
+
     private String password;
 
-    @Column(length = 100)
-    private String email;
-
-    private int birthday;
-
-    @Column(length = 10)
     private String name;
 
-    @Column(length = 200)
-    private String represent_photo;
+    private String nickName;
+
+    private String gender;
+
+    private int age;
+
+    private String phoneNumber;
+
+    private String thumbnail;
+
+    private int status;
+
+    private String url;
 
 }

@@ -8,22 +8,19 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class LoginHistory extends BaseTimeEntity {
+public class Follow extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "FOLLOW_SEQ")
     private Long seq;
 
     @ManyToOne
-    @JoinColumn(name = "USER_ID")
-    private User user;
+    @JoinColumn(name = "TO_USER_ID")
+    private User toUser;
 
-    private String ip;
-
-    private String userAgent;
-
-    private String route;
-
-    private String result;
+    @ManyToOne
+    @JoinColumn(name = "FROM_USER_ID")
+    private User fromUser;
 
 }

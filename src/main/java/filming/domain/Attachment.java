@@ -8,22 +8,24 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class LoginHistory extends BaseTimeEntity {
+public class Attachment extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seq;
 
     @ManyToOne
-    @JoinColumn(name = "USER_ID")
+    @JoinColumn(name = "ATTACHMENTGROUP_SEQ")
     private User user;
 
-    private String ip;
+    private String fileName;
 
-    private String userAgent;
+    private int iso;
 
-    private String route;
+    private String shutterSpeed;
 
-    private String result;
+    private String fStop;
+
+    private String filmName;
 
 }

@@ -8,15 +8,13 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Photo extends BaseTimeEntity {
+public class AttachmentGroup extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PHOTO_SEQ")
+    @Column(name = "ATTACHMENTGROUP_SEQ")
     private Long seq;
 
-    @ManyToOne
-    @JoinColumn(name = "BOARD_SEQ")
-    private Board board;
+    private String fileRoute;
 
 }

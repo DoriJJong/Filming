@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Environment extends BaseTimeEntity {
+public class PointHistory extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,14 +18,10 @@ public class Environment extends BaseTimeEntity {
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    @Column(length = 10)
-    private String f_stop;
+    private int accumulatePoint;
 
-    @Column(length = 10)
-    private String shutter_speed;
+    private int extractPoint;
 
-    @Column(length = 10)
-    private String meter;
+    private String extractContent;
 
-    private int iso;
 }

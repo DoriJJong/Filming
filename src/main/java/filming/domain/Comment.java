@@ -8,15 +8,16 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class PhotoLike extends BaseTimeEntity {
+public class Comment extends BaseTimeEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PHOTOLIKE_SEQ")
-    private Long seq;
+    @ManyToOne
+    @JoinColumn(name = "BOARD_SEQ")
+    private Board board;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private User user;
+
+    private String content;
 
 }
