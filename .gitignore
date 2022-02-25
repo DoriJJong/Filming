@@ -6,3 +6,4 @@
 .idea
 *.class
 application.properties
+application-oauth.properties

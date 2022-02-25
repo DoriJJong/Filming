@@ -15,6 +15,10 @@ public class Company extends BaseTimeEntity {
     @Column(name = "COMPANY_SEQ")
     private Long seq;
 
+    @ManyToOne
+    @JoinColumn(name = "CAMERA_SEQ")
+    private Camera camera;
+
     private String name;
 
 }

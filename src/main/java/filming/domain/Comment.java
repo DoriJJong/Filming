@@ -10,6 +10,11 @@ import javax.persistence.*;
 @Entity
 public class Comment extends BaseTimeEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "COMMENT_SEQ")
+    private Long seq;
+
     @ManyToOne
     @JoinColumn(name = "BOARD_SEQ")
     private Board board;

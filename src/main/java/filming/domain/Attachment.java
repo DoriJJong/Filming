@@ -16,7 +16,7 @@ public class Attachment extends BaseTimeEntity {
 
     @ManyToOne
     @JoinColumn(name = "ATTACHMENTGROUP_SEQ")
-    private User user;
+    private AttachmentGroup attachmentGroup;
 
     private String fileName;
 
