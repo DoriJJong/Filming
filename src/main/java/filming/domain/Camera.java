@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Camera extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "CAMERA_SEQ")
     private Long seq;
 

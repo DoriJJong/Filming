@@ -1,27 +1,25 @@
 package filming.dto;
 
-import filming.domain.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
-
 @Getter
 @NoArgsConstructor
-public class UserSaveRequestDto {
+public class UserDto {
 
     private String token;
     private String email;
     private String nickName;
-    private UUID id;
+    private String password;
+    private String uuid;
 
     @Builder
-    public UserSaveRequestDto(String token, String email, String nickName, UUID id) {
+    public UserDto(String token, String email, String nickName, String password, String uuid) {
         this.token = token;
         this.email = email;
         this.nickName = nickName;
-        this.id = id;
+        this.password = password;
+        this.uuid = uuid;
     }
-
 }

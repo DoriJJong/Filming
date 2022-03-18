@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Follow extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "FOLLOW_SEQ")
     private Long seq;
 

@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Comment extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "COMMENT_SEQ")
     private Long seq;
 

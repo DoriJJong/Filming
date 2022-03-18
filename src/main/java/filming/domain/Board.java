@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Board extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "BOARD_SEQ")
     private Long seq;
 

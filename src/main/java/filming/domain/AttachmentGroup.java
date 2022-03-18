@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class AttachmentGroup extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "ATTACHMENTGROUP_SEQ")
     private Long seq;
 

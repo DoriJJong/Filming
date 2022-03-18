@@ -7,22 +7,29 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.UUID;
 
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
+@Table(uniqueConstraints = {
+        @UniqueConstraint (
+                columnNames = {"email", "uuid"}
+        )
+    }
+)
 public class User extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "UUID")
     @Column(name = "USER_ID")
-    private UUID id;
+    @GeneratedValue
+    private Long seq;
 
     @OneToMany(mappedBy = "user")
     private List<UserCamera> userCameras;
+
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    private String uuid;
 
     private String email;
 
@@ -40,14 +47,13 @@ public class User extends BaseTimeEntity {
 
     private String thumbnail;
 
-    private int status;
-
     private String url;
 
     @Builder
-    public User(UUID id, List<UserCamera> userCameras, String email, String password, String name, String nickName, String gender, int age, String phoneNumber, String thumbnail, int status, String url) {
-        this.id = id;
+    public User(Long seq, List<UserCamera> userCameras, String uuid, String email, String password, String name, String nickName, String gender, int age, String phoneNumber, String thumbnail, String url) {
+        this.seq = seq;
         this.userCameras = userCameras;
+        this.uuid = uuid;
         this.email = email;
         this.password = password;
         this.name = name;
@@ -56,7 +62,12 @@ public class User extends BaseTimeEntity {
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.thumbnail = thumbnail;
-        this.status = status;
         this.url = url;
     }
+
+    public User update(String name) {
+        this.name = name;
+        return this;
+    }
+
 }
